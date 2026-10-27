@@ -1,0 +1,226 @@
+/* ============================================================
+   index.css — AeroSales CRM Design System
+   Paleta: crema/hueso, blanco, naranja/coral, verde, azul
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── Tokens ────────────────────────────────────────────────── */
+:root {
+  /* Background */
+  --bg-canvas:       #F7F4F0;
+  --bg-card:         #FFFFFF;
+  --bg-card-hover:   #FDFCFB;
+  --bg-sidebar:      #1A1A2E;
+
+  /* Accents */
+  --accent-orange:   #F97316;
+  --accent-orange-lt:#FFF1E8;
+  --accent-orange-dk:#EA6500;
+  --accent-green:    #22C55E;
+  --accent-green-lt: #E8FFF0;
+  --accent-green-dk: #16A34A;
+  --accent-blue:     #3B82F6;
+  --accent-blue-lt:  #EBF3FF;
+  --accent-blue-dk:  #2563EB;
+  --accent-red:      #EF4444;
+  --accent-red-lt:   #FEF2F2;
+  --accent-purple:   #8B5CF6;
+  --accent-purple-lt:#F3EEFF;
+
+  /* Text */
+  --text-primary:    #1A1A2E;
+  --text-secondary:  #4B5563;
+  --text-muted:      #9CA3AF;
+  --text-inverse:    #FFFFFF;
+
+  /* Border */
+  --border-light:    #E5E7EB;
+  --border-medium:   #D1D5DB;
+
+  /* Shadows */
+  --shadow-xs:       0 1px 3px rgba(0,0,0,0.06);
+  --shadow-sm:       0 2px 8px rgba(0,0,0,0.07);
+  --shadow-md:       0 4px 20px rgba(0,0,0,0.09);
+  --shadow-lg:       0 8px 40px rgba(0,0,0,0.12);
+  --shadow-orange:   0 4px 20px rgba(249,115,22,0.25);
+  --shadow-green:    0 4px 20px rgba(34,197,94,0.20);
+  --shadow-blue:     0 4px 20px rgba(59,130,246,0.20);
+
+  /* Radii */
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  18px;
+  --radius-xl:  24px;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-md:   250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* ── Reset ──────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+img, svg { display: block; }
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-canvas); }
+::-webkit-scrollbar-thumb { background: var(--border-medium); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ── App Layout ─────────────────────────────────────────────── */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.dashboard-wrapper {
+  flex: 1;
+  padding: var(--space-lg) var(--space-xl);
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── KPI Row ─────────────────────────────────────────────────── */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Charts Row ──────────────────────────────────────────────── */
+.charts-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Bottom Row ──────────────────────────────────────────────── */
+.bottom-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Card base ───────────────────────────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: box-shadow var(--transition-md), transform var(--transition-md);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) var(--space-lg) var(--space-md);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.card-body {
+  padding: var(--space-lg);
+}
+
+/* ── Badges ──────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.badge-won   { background: var(--accent-green-lt); color: var(--accent-green-dk); }
+.badge-open  { background: var(--accent-orange-lt); color: var(--accent-orange-dk); }
+.badge-lost  { background: var(--accent-red-lt); color: var(--accent-red); }
+.badge-prospect    { background: var(--accent-purple-lt); color: var(--accent-purple); }
+.badge-lead        { background: var(--accent-blue-lt); color: var(--accent-blue-dk); }
+.badge-negotiation { background: var(--accent-orange-lt); color: var(--accent-orange-dk); }
+
+/* ── Animations ──────────────────────────────────────────────── */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-slide-up {
+  animation: fadeSlideUp 0.5s ease forwards;
+}
+
+/* ── Typography helpers ──────────────────────────────────────── */
+.text-muted    { color: var(--text-muted); }
+.text-secondary { color: var(--text-secondary); }
+.font-semibold { font-weight: 600; }
+.font-bold     { font-weight: 700; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .kpi-row { grid-template-columns: repeat(2, 1fr); }
+  .charts-row { grid-template-columns: 1fr; }
+  .bottom-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .dashboard-wrapper { padding: var(--space-md); }
+  .kpi-row { grid-template-columns: 1fr; }
+}

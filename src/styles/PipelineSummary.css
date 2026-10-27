@@ -1,0 +1,128 @@
+/* PipelineSummary.css */
+.pipeline-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.pipeline-subtitle {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.pipeline-total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.pipeline-total-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pipeline-total-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent-orange);
+  letter-spacing: -0.02em;
+}
+
+.pipeline-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.pipeline-stages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.pipeline-stage-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.pipeline-stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pipeline-stage-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.pipeline-stage-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.pipeline-stage-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.pipeline-stage-prob {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.pipeline-stage-right {
+  text-align: right;
+}
+
+.pipeline-stage-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.pipeline-stage-count {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.pipeline-bar-track {
+  height: 6px;
+  background: var(--border-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.pipeline-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pipeline-funnel-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) 0 0;
+  border-top: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-size: 0.73rem;
+  font-weight: 500;
+  margin-top: var(--space-sm);
+}
+
+.pipeline-empty {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: var(--space-xl) 0;
+}

@@ -1,0 +1,9 @@
+/* App.css — Layout adicional para el dashboard */
+.dashboard-footer {
+  text-align: center;
+  padding: var(--space-lg);
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-card);
+}
